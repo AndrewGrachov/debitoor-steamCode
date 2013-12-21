@@ -1,7 +1,13 @@
 node_modules
+
 dist
+
 .tmp
+
 .sass-cache
+
 .idea
+public/uploads
+
 app/bower_components
 

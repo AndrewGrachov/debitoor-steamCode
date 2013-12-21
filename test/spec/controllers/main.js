@@ -3,7 +3,7 @@
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('debitoorSteamCodeApp'));
+  beforeEach(function(){module('debitoorSteamCodeApp'); module('restangular');});
 
   var MainCtrl,
     scope;

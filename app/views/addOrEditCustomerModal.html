@@ -1,0 +1,41 @@
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="close()" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">{{title}}</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" disable-if="entity.saving">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="entity.name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Password</label>
+                        <input type="email" class="form-control" id="email" placeholder="enter email" ng-model="entity.email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="text" class="form-control" id="phone" placeholder="Enter phone" ng-model="entity.phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" placeholder="Enter adress" ng-model="entity.address">
+                    </div>
+                    <div class="form-group">
+                        <label for="vatNumber">Vat number</label>
+                        <input type="text" class="form-control" id="vatNumber" placeholder="Enter adress" ng-model="entity.vatNumber">
+                    </div>
+                    <div class="form-group">
+                        <label for="homepage">Home page</label>
+                        <input type="text" class="form-control" id="homepage" placeholder="Enter home page" ng-model="entity.homepage">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" class="form-control" id="country" placeholder="select country" ng-model="entity.country">
+                    </div>
+                    <button type="submit" ng-click="saveChanges()" class="btn btn-info">Save changes</button>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->

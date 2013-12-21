@@ -1,1 +1,50 @@
 <p>This is the contacts view.</p>
+<h5 ng-show="noCustomers">Seems to be you dont have any customers yet. try to</h5>
+<div ng-show="customers.length>0">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+              <th>
+                  Name
+              </th>
+              <th>
+                 Address
+              </th>
+              <th>
+                  Phone
+              </th>
+              <th>Email</th>
+              <th>HomePage</th>
+              <th>Vat number</th>
+              <th>PaymentTerms</th>
+              <th>Country</th>
+              <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="customer in customers" row-click="openModal(customer)">
+                <td>{{customer.name}}</td>
+                <td>{{customer.address || "N/A"}}</td>
+                <td>{{customer.phone || "N/A"}}</td>
+                <td>{{customer.email || "N/A"}}</td>
+                <td>{{customer.homepage || "N/A"}}</td>
+                <td>{{customer.vatNumber || "N/A"}}</td>
+                <td>N/A</td>
+                <td>{{customer.countryName}}</td>
+                <td>
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <ul>
+
+    </ul>
+
+</div>
+<div class="row">
+    <button class="btn btn-info btn-large" upload-click="upload-google-contacts">Upload CSV-formatted google contacts</button>
+    <input id="upload-google-contacts" type="file" name="contacts" ng-file-select="onFileSelect($files)" ng-hide="true">
+</div>
+

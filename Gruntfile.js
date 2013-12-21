@@ -11,13 +11,24 @@ module.exports = function (grunt) {
 
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
+  grunt.loadNpmTasks('grunt-simple-mocha');
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
   // Define the configuration for all the tasks
   grunt.initConfig({
+    simplemocha: {
+      options: {
+        globals: ['should'],
+        timeout: 5000,
+        ignoreLeaks: true,
+        ui: 'exports',
+        reporter: 'tap'
+      },
 
+      all: { src: ['tests/*.js'] }
+    },
     // Project settings
     yeoman: {
       // configurable paths

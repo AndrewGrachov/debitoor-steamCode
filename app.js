@@ -12,14 +12,22 @@ var fs = require('fs');
 var app = express();
 var globalRoutes = require("./setUpGlobalRoutes")
 
-glob = {
-    config:require("./config")
+global.glob = {
+    config:require("./config"),
+    factories:require("./factories"),
+    service:require("./service"),
+    modules:{
+      fs:require('fs')
+
+    }
 }
+glob.modules.debitoor= require('debitoor')(glob.config.app.app_token)
 
 
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.use(express.favicon());
+app.use(express.bodyParser({ keepExtensions: true, uploadDir: __dirname + '/public/uploads' }));
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
