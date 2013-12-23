@@ -8,25 +8,25 @@ angular.module('debitoorSteamCodeApp')
         scope.$watch(attrs.disableIf, function () {
           var disable = scope.$eval(attrs.disableIf);
           if (disable) {
-            element.find("input").each(function () {
-              $(this).attr("disabled", "disabled");
+            element.find('input').each(function () {
+              $(this).attr('disabled', 'disabled');
             });
 
-            if ($(this).attr("select2input")) {
-              $(this).select2("disable");
+            if ($(this).attr('select2input')) {
+              $(this).select2('disable');
             }
 
-            element.find("textarea").attr("disabled", "disabled");
+            element.find('textarea').attr('disabled', 'disabled');
           }
           else {
-            element.find("input").each(function () {
-              $(this).removeAttr("disabled");
+            element.find('input').each(function () {
+              $(this).removeAttr('disabled');
 
-              if ($(this).attr("select2input")) {
-                $(this).select2("enable");
+              if ($(this).attr('select2input')) {
+                $(this).select2('enable');
               }
-              element.find("textarea").removeAttr("disabled");
-            })
+              element.find('textarea').removeAttr('disabled');
+            });
           }
         });
       }

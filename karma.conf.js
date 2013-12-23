@@ -11,7 +11,10 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'app/bower_components/tv4/tv4.js',
+      'app/bower_components/tv4/tv4.async-jquery.js',
       'app/bower_components/angular/angular.js',
+      'app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'app/bower_components/ng-file-upload/angular-file-upload.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/bower_components/angular-route/angular-route.js',

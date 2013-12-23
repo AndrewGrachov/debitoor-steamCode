@@ -5,9 +5,9 @@ module.exports = {
     app.all('/api/debitoor/*', function (req, res) {
       var path = req.url.substr(13);
       var requestConfig = {url: path,json:true,body:req.body,method:req.method};
-      glob.modules.debitoor(requestConfig,function(err,response,body){
+      glob.modules.debitoor(path,requestConfig,function(err,response,body){
         if (err){
-          res.send(err);
+          res.send({error:err});
         }
         else{
           res.send(body);

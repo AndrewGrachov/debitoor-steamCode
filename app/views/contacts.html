@@ -1,5 +1,13 @@
-<p>This is the contacts view.</p>
+<img src="images/spinner.gif" ng-show="loading"/>
 <h5 ng-show="noCustomers">Seems to be you dont have any customers yet. try to</h5>
+<button class="btn btn-success" ng-click="openModal()" ng-hide="loading">Add new customer</button>
+
+<div class="row" ng-hide="loading"> <p>Or</p>
+    <button class="btn btn-info btn-large" upload-click="upload-google-contacts">Upload CSV-formatted google contacts</button>
+    <input id="upload-google-contacts" type="file" name="contacts" ng-file-select="onFileSelect($files)" ng-hide="true">
+</div>
+
+
 <div ng-show="customers.length>0">
     <table class="table table-striped">
         <thead>
@@ -32,19 +40,23 @@
                 <td>N/A</td>
                 <td>{{customer.countryName}}</td>
                 <td>
-
+                    <!-- Single button -->
+                    <div class="btn-group" ng-hide="customer.saving">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" ng-disabled="customer.saving">
+                            Action <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#" row-click="remove(customer)">Delete</a></li>
+                        </ul>
+                    </div>
+                    <div ng-show="customer.saving">
+                        <img src="images/spinner.gif" />
+                    </div>
                 </td>
             </tr>
 
         </tbody>
     </table>
-    <ul>
 
-    </ul>
 
 </div>
-<div class="row">
-    <button class="btn btn-info btn-large" upload-click="upload-google-contacts">Upload CSV-formatted google contacts</button>
-    <input id="upload-google-contacts" type="file" name="contacts" ng-file-select="onFileSelect($files)" ng-hide="true">
-</div>
-

@@ -10,7 +10,7 @@ angular.module('debitoorSteamCodeApp')
           scope.$eval(attrs.rowClick);
           if(!scope.$$phase){
             scope.$apply();
-          };
+          }
           return false; //prevent bubbling
         });
       }

@@ -1,5 +1,9 @@
 (function(){
     'use strict';
+    Array.prototype.remove = function(item){
+      var index = this.indexOf(item);
+      this.splice(index,1);
+    };
     console.log('app loaded');
     tv4.addSchema('customer','https://api.debitoor.com/api/v1.0/schemas/customer');
 
