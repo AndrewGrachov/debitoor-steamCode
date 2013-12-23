@@ -5,8 +5,10 @@ this is test application from steamCode to test debitoor api
 
 Instructions:
 
-run npm-install
-run grunt
+run 'npm-install',
+
+run 'grunt',
+
 run 'node app.js'
 
 Testing:
