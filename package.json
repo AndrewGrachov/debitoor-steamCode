@@ -9,6 +9,8 @@
     "async": "~0.2.9",
     "mocha": "~1.16.1",
     "should": "~2.1.1",
+    "express":"*",
+    "debitoor":"*",
     "sinon": "~1.7.3",
     "lodash": "~2.4.1"
   },
